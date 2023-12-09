@@ -17,3 +17,5 @@ const ticketSchema = new Schema(
     timestamps: true,
   }
 );
+
+const ticket = mongoose.models.ticket || mongoose.model("Ticket", ticketSchema);
