@@ -1,7 +1,11 @@
-import React from "react";
+import TicketCard from "./(components)/TicketCard";
 
 const Dasboard = () => {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <TicketCard />
+    </div>
+  );
 };
 
 export default Dasboard;
