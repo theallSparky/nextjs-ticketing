@@ -15,6 +15,10 @@ const TicketForm = () => {
     });
   };
 
+  const handleSubmit = () => {
+    console.log("submitted");
+  };
+
   const startingTicketData = {
     title: "",
     description: "",
@@ -27,17 +31,33 @@ const TicketForm = () => {
   const [formData, setFormData] = useState(startingTicketData);
   return (
     <div className="flex justify-center">
-      <form>
+      <form
+        className="flex flex-col gap-3 w-1/2"
+        method="post"
+        onSubmit={handleSubmit}
+      >
         <h3>Create your ticket</h3>
         <label>Title</label>
         <input
           id="title"
-          name="name"
+          name="title"
           type="text"
           onChange={handleChange}
           required={true}
           value={formData.title}
         />
+        <label>Description</label>
+        <textarea
+          id="description"
+          name="description"
+          onChange={handleChange}
+          required={true}
+          value={formData.description}
+          rows="5"
+        />
+
+        <label>Category</label>
+        <select></select>
       </form>
     </div>
   );
